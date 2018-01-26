@@ -5,7 +5,7 @@ Scrapy简单介绍
 
 > Scrapy 使用了 Twisted异步网络库来处理网络通讯。整体架构大致如下:
 
-![Image text](https://github.com/IceDarron/spider_nest/scrapy_framework.png)
+![Image text](https://github.com/IceDarron/spider_nest/blob/master/scrapy_framework.png)
 
 Scrapy主要组件
 ===
