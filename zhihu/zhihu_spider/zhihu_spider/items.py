@@ -11,4 +11,20 @@ import scrapy
 class ZhihuSpiderItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    # pass
+    url = scrapy.Field()
+    name = scrapy.Field()
+    bio = scrapy.Field()
+    location = scrapy.Field()
+    business = scrapy.Field()
+    gender = scrapy.Field()
+    avatar = scrapy.Field()
+    education = scrapy.Field()
+    major = scrapy.Field()
+    employment = scrapy.Field()
+    position = scrapy.Field()
+    content = scrapy.Field()
+    ask = scrapy.Field()
+    answer = scrapy.Field()
+    agree = scrapy.Field()
+    thanks = scrapy.Field()
