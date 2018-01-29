@@ -5,7 +5,7 @@ UsersConfig = {
  
     # 知乎用户名和密码
     'email': 'darron_r@163.com',
-    'password': '00000000r',
+    'password': '...',
 }
  
 DbConfig = {
