@@ -2,9 +2,9 @@
 import scrapy
 import os
 import time
-from zhihu.items import UserItem
-from zhihu.myconfig import UsersConfig # 爬虫配置
- 
+from zhihu_spider.items import ZhihuSpiderItem
+from zhihu_spider.myconfig import UsersConfig # 爬虫配置
+
 class UsersSpider(scrapy.Spider):
     name = 'users'
     domain = 'https://www.zhihu.com'
@@ -180,7 +180,7 @@ class UsersSpider(scrapy.Spider):
  
         sel = response.xpath('//div[@class="zm-profile-header ProfileCard"]')
  
-        item = UserItem()
+        item = ZhihuSpiderItem()
         item['url'] = response.url[:-6]
         item['name'] = sel.xpath('//a[@class="name"]/text()').extract()[0].encode('utf-8')
         item['bio'] = value(sel.xpath('//span[@class="bio"]/@title').extract()).encode('utf-8')
