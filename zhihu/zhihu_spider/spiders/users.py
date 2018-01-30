@@ -16,8 +16,11 @@ class UsersSpider(scrapy.Spider):
         "Connection": "keep-alive",
         "Host": "www.zhihu.com",
         "Upgrade-Insecure-Requests": "1",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36"
     }
+
+    def parse(self, response):
+        print(response)
 
     def __init__(self, url=None):
         self.user_url = url
@@ -35,7 +38,7 @@ class UsersSpider(scrapy.Spider):
 
     def request_captcha(self, response):
         # 获取_xsrf值
-        _xsrf = response.css('input[name="_xsrf"]::attr(value)').extract()[0]
+        _xsrf = response.css('input[name="_xsrf"]::attr(value)').extract()
         # 获取验证码地址
         captcha_url = 'http://www.zhihu.com/captcha.gif?r=' + str(time.time() * 1000)
         # 准备下载验证码
@@ -57,8 +60,7 @@ class UsersSpider(scrapy.Spider):
         # 用软件打开验证码图片
         os.system('start captcha.gif')
         # 输入验证码
-        print
-        'Please enter captcha: '
+        print('Please enter captcha: ')
         captcha = input()
 
         yield scrapy.FormRequest(
