@@ -19,7 +19,8 @@ NEWSPIDER_MODULE = 'zhihu_spider.spiders'
 #USER_AGENT = 'zhihu_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# because so maney website dont support robot-protocol, it have to be closed. so it shuold be 'ROBOTSTXT_OBEY = False'
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
