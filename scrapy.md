@@ -38,17 +38,17 @@ Scrapy运行流程
 实践
 ===
 ### 安装
-```python
+```
 pip install Scrapy
 ```
 
 ### 创建项目:
-```python
+```
 scrapy startproject your_project_name
 ```
 
 ### 自动创建目录：
-```python
+```
 project_name/
    scrapy.cfg
    project_name/
@@ -66,16 +66,32 @@ project_name/
 + spiders      爬虫目录，如：创建文件，编写爬虫规则
 
 ### 运行
-```python
+```
 scrapy crawl spider_name --nolog
 ```
 
+### 运行scrapy是报import win32api ImportError DLL load 错误
+需要安装pywin32 
+```
+pip install pywin32
+```
+之后将..\Python\Python35\Lib\site-packages\pywin32_system32里面的所有的文件复制到：C:\Windows\System32
+再执行scrapy bench即可。
 
 
+### 常见问题
+```
+# Obey robots.txt rules
+# because so maney website dont support robot-protocol, it have to be closed. 
+  so it shuold be 'ROBOTSTXT_OBEY = False'
+ROBOTSTXT_OBEY = False
+```
 
+验证码获取时的样式选择器选取错误
 
+重写所有继承的抽象方法-parse
 
-
+修改header文件中的浏览器版本
 
 
 
